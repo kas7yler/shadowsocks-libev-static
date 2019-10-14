@@ -2,7 +2,7 @@
 Static builds of shadowsocks-libev for linux.
 
 ## TODO:
-* Add dockerfile used to build the binaries.
+* ~~Add dockerfile used to build the binaries.~~
+* ~~-static-pie~~
 * More architectures, possibly mingw builds.
-* -static-pie
 * PGP sigs.
