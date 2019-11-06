@@ -5,7 +5,7 @@ set -e
 name=shadowsocks-libev
 source_url=${url}/releases/download/v${ver}/${name}-${ver}.tar.gz
 arch=$(arch)
-pkgname=${name}-${arch}-linux-musl-static-v${ver}-${rel}
+pkgname=${name}-v${ver}-${rel}-${arch}-linux-musl-static
 
 cd /build
 
@@ -13,7 +13,7 @@ curl -O -L ${source_url}
 gunzip *.tar.gz && tar xf *.tar
 cd ${name}-${ver}
 
-export CFLAGS="-Os -static -static-pie -static-libgcc"
+export CFLAGS="-O2 -pipe -static-pie -static-libgcc"
 export LDFLAGS="-Wl,-static"
 ./configure --disable-documentation
 make -j4
